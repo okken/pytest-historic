@@ -1,0 +1,2 @@
+recursive-include pytest_historic/templates *
+include MANIFEST.in
