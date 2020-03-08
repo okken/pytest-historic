@@ -79,11 +79,11 @@ Pytest-historic is a free, custom html report which provides historical pytest e
     pip install git+https://github.com/adiralashiva8/pytest-historic
     ```
 
- - __Step 2:__ Download and Install MySQL Server - [guide](https://bit.ly/2GrUUZ9)
+ - __Step 2:__ Download and Install MySQL Server - [guide](https://bit.ly/39zw0DF)
 
- - __Step 3:__ Create *pytesthistoric* default user with permissions - [guide](https://bit.ly/2PIOTfI)
+ - __Step 3:__ Create *pytesthistoric* default user with permissions - [guide](https://bit.ly/2Ir29BD)
 
- - __Step 4:__ Create *pytesthistoric.tb_project* table - [guide](https://bit.ly/2Tv2tV5)
+ - __Step 4:__ Create *pytesthistoric.tb_project* table - [guide](https://bit.ly/2wAJpgm)
 
  - __Step 5:__ Install pytest-historic-hook
     ```
@@ -96,9 +96,9 @@ Pytest-historic is a free, custom html report which provides historical pytest e
 
 ## How to use in project
 
- - __Step 1:__ Create project in pytest-historic - [guide](https://bit.ly/38JskhS)
+ - __Step 1:__ Create project in pytest-historic - [guide](https://bit.ly/2IwTqh3)
 
- - __Step 2:__ Push execution results to project - [guide](https://bit.ly/2U62HUf)
+ - __Step 2:__ Push execution results to project - [guide](https://bit.ly/38zTp6P)
 
  - __Step 3:__ Open pytest-historic to view historical results
 
