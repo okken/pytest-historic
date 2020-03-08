@@ -1,6 +1,6 @@
-# pytest-historic (In development not ready for use)
+# pytest-historic
 
-pytest-historic is a free, custom html report which provides historical pytest execution results by storing execution results info in MySQL database and generate's html reports (charts / statistics) from database using Flask.
+Pytest-historic is a free, custom html report which provides historical pytest execution results by storing execution results info in MySQL database and generate's html reports (charts / statistics) from database using Flask.
 
 > MYSQL + Flask + pytest
 
@@ -13,21 +13,22 @@ pytest-historic is a free, custom html report which provides historical pytest e
 
 ---
 
-## pytest Historic Overview
+## Pytest Historic Overview
 
- > <img src="https://i.ibb.co/Rc37hP7/Webp-net-gifmaker-1.gif" alt="Overview">
+ > <img src="https://i.ibb.co/SsrvGv5/pytest-Historic-Overview.png" alt="Overview">
 
 ---
 
 ## Features
 
 - Support Historic Results
-- Visualization of execution status like
-  - Last 10 execution, performance trends
-  - Average pass tests of recent 10, overvall executions
-  - Average execution time of recent 10, overall executions
+- Visualization of executions
 - Search Historical test records by name / status / execution id
 - Local hosted (meets privacy concerns)
+- Flakiness
+- Compare executions
+- Generate Pytest-metrics report
+- Custom comments on failures
 - Export results (Excel, CSV, Print, Copy)
 
 ---
@@ -47,7 +48,7 @@ pytest-historic is a free, custom html report which provides historical pytest e
 - Store execution results in local / remote hosted __MySQL__ database
 - Generate html report using __Flask__
 
-  > <img src="https://i.ibb.co/PzVNGfN/pytest-historic-overview.png" alt="pytest-historic-overview">
+  > <img src="https://i.ibb.co/bbRdFSx/Pytest-Working.png" alt="pytest-historic-overview">
 
 ---
 
@@ -80,16 +81,13 @@ pytest-historic is a free, custom html report which provides historical pytest e
 
  - __Step 2:__ Download and Install MySQL Server - [guide](https://bit.ly/2GrUUZ9)
 
- - __Step 3:__ Create *rfhistoric* default user with permissions - [guide](https://bit.ly/30ZPT3v)
+ - __Step 3:__ Create *pytesthistoric* default user with permissions - [guide](https://bit.ly/2PIOTfI)
 
- - __Step 4:__ Install pytest-historic-parser
-    ```
-    pip install pytest-historic-parser
-    ```
+ - __Step 4:__ Create *pytesthistoric.tb_project* table - [guide](https://bit.ly/2Tv2tV5)
 
- - __Step 5:__ Install pytest-historic-listener
+ - __Step 5:__ Install pytest-historic-hook
     ```
-    pip install --upgrade pytest-historic-listener
+    pip install pytest-historic-hook
     ```
 
    > _Note:_ Above all actions are one time activities
@@ -121,6 +119,6 @@ If you have any questions / suggestions / comments on the report, please feel fr
 
 :star: repo if you like it
 
-> Inspired from [ZenQ - ARES Dahsboard](http://www.testastra.com/ares/)
+> Inspired from [Robotframework-Historic](https://github.com/adiralashiva8/robotframework-historic)
 
 ---

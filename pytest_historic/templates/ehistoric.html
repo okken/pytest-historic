@@ -3,7 +3,7 @@
 
 <head>
     <link href="https://img.icons8.com/cotton/64/000000/time-machine.png" rel="shortcut icon" type="image/x-icon"/>
-    <title>Pytest Historic - Execution Historic</title>
+    <title>Pytest Historic - History</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -56,10 +56,11 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="tablinks"><a href="./dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                    <li class="tablinks active" onclick="executeDataTable()"><a href="./ehistoric"><i class="fa fa-history"></i> Execution Historic</a></li>
-                    <li class="tablinks"><a href="./tmetrics"><i class="fa fa-flask"></i> Test Metrics</a></li>
+                    <li class="tablinks active" onclick="executeDataTable()"><a href="./ehistoric"><i class="fa fa-history"></i> History</a></li>
+                    <li class="tablinks"><a href="./tmetrics"><i class="fa fa-flask"></i> Metrics</a></li>
                     <li class="tablinks"><a href="./flaky"><i class="fa fa-bolt"></i> Flaky</a></li>
                     <li class="tablinks"><a href="./search"><i class="fa fa-search"></i> Search</a></li>
+                    <li class="tablinks"><a href="./compare"><i class="fa fa-sliders"></i> Compare</a></li>
                 </ul>
             </div>
         </div>
@@ -70,16 +71,21 @@
             <h3 class="my-0 mr-md-auto font-weight-normal" style="text-transform: capitalize;">{{db_name}} - Recent Executions</h3>
         </div>
         <hr>
-        <table class="table table-striped table-bordered" id="ehist">
+        <table class="table table-striped" id="ehist">
             <thead>
                 <tr>
                     <th>Execution ID</th>
                     <th>Date</th>
                     <th>Description</th>
-                    <th>Total</th>
+                    <th>Executed</th>
                     <th>Passed</th>
                     <th>Failed</th>
-                    <th>Time (m)</th>
+                    <th>xPass</th>
+                    <th>xFail</th>
+                    <th>Skiped</th>
+                    <th>Error</th>
+                    <th>Time (s)</th>
+                    <th>Metrics | Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -88,10 +94,15 @@
                         <td title="Click to view {{item[0]}} execution info"><a href="./tmetrics/{{item[0]}}" target="_blank">{{item[0]}}</a></td>
                         <td> {{item[1]}}</td>
                         <td style="text-align:left;"> {{item[2]}}</td>
-                        <td style="color: brown"> {{item[3]}}</td style="color: green">
-                        <td style="color: green"> {{item[4]}}</td style="color: green">
-                        <td style="color: red"> {{item[5]}}</td style="color: green">
-                        <td>{{item[6]}}</td>
+                        <td style="color: teal"> {{item[3]}}</td>
+                        <td style="color: green"> {{item[4]}}</td>
+                        <td style="color: red"> {{item[5]}}</td>
+                        <td style="color: brown"> {{item[7]}}</td>
+                        <td style="color: brown"> {{item[8]}}</td>
+                        <td style="color: brown"> {{item[6]}}</td>
+                        <td style="color: gray"> {{item[9]}}</td>
+                        <td>{{item[10]}}</td>
+                        <td> <a href="./metrics/{{item[0]}}" target="_blank">View</a> | <a href="./deleconf/{{item[0]}}">Delete</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -111,7 +122,7 @@
 							text:      '<i class="fa fa-files-o"></i>',
 							titleAttr: 'Copy',
 							exportOptions: {
-								columns: ':visible'
+								columns: ':visible:not(:last-child)'
 							}
 						},
                         {
@@ -122,7 +133,7 @@
                                 return fileTitle + '-' + new Date().toLocaleString();
                             },
 							exportOptions: {
-								columns: ':visible'
+								columns: ':visible:not(:last-child)'
 							}
                         },
                         {
@@ -133,7 +144,7 @@
                                 return fileTitle + '-' + new Date().toLocaleString();
                             },
 							exportOptions: {
-								columns: ':visible'
+								columns: ':visible:not(:last-child)'
 							}
                         },
                         {
@@ -141,7 +152,7 @@
 							text:      '<i class="fa fa-print"></i>',
 							titleAttr: 'Print',
 							exportOptions: {
-								columns: ':visible',
+								columns: ':visible:not(:last-child)',
                                 alignment: 'left',
 							}
                         },
@@ -151,7 +162,7 @@
 							text:      '<i class="fa fa-low-vision"></i>',
 							titleAttr: 'Hide Column',
 							exportOptions: {
-								columns: ':visible'
+								columns: ':visible:not(:last-child)'
 							},
 							postfixButtons: [ 'colvisRestore' ]
                         },

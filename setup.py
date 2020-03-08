@@ -15,7 +15,7 @@ setup(
       author_email='adiralashiva8@gmail.com',
       url='https://github.com/adiralashiva8/pytest-historic',
       license='MIT',
-      
+
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
@@ -28,7 +28,7 @@ setup(
       ],
       entry_points={
           'console_scripts': [
-              'rfhistoric=pytest_historic.app:main',
+              'pytesthistoric=pytest_historic.app:main',
           ]
       },
 )
