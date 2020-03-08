@@ -15,7 +15,7 @@ Pytest-historic is a free, custom html report which provides historical pytest e
 
 ## Pytest Historic Overview
 
- > <img src="https://i.ibb.co/SsrvGv5/pytest-Historic-Overview.png" alt="Overview">
+ > <img src="https://i.ibb.co/L8vXqrz/gif.gif" alt="Overview">
 
 ---
 
